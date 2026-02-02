@@ -1,36 +1,177 @@
-# This is a basic workflow to help you get started with Actions
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Mabheshingo 💙</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
-name: CI
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
 
-# Controls when the workflow will run
-on:
-  # Triggers the workflow on push or pull request events but only for the "main" branch
-  push:
-    branches: [ "main" ]
-  pull_request:
-    branches: [ "main" ]
+  <style>
+    body {
+      margin: 0;
+      font-family: 'Inter', sans-serif;
+      height: 100vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: #eaf6ff;
+      background: linear-gradient(270deg, #0f2027, #203a43, #2c5364);
+      background-size: 600% 600%;
+      animation: gradientFlow 18s ease infinite;
+    }
 
-  # Allows you to run this workflow manually from the Actions tab
-  workflow_dispatch:
+    @keyframes gradientFlow {
+      0% { background-position: 0% 50%; }
+      50% { background-position: 100% 50%; }
+      100% { background-position: 0% 50%; }
+    }
 
-# A workflow run is made up of one or more jobs that can run sequentially or in parallel
-jobs:
-  # This workflow contains a single job called "build"
-  build:
-    # The type of runner that the job will run on
-    runs-on: ubuntu-latest
+    .card {
+      background: rgba(255, 255, 255, 0.08);
+      padding: 48px 38px;
+      border-radius: 26px;
+      backdrop-filter: blur(16px);
+      max-width: 420px;
+      width: 90%;
+      text-align: center;
+      box-shadow: 0 30px 60px rgba(0, 0, 0, 0.35);
+      border: 1px solid rgba(255, 255, 255, 0.12);
+      animation: floatCard 6s ease-in-out infinite;
+    }
 
-    # Steps represent a sequence of tasks that will be executed as part of the job
-    steps:
-      # Checks-out your repository under $GITHUB_WORKSPACE, so your job can access it
-      - uses: actions/checkout@v4
+    @keyframes floatCard {
+      0%, 100% { transform: translateY(0px); }
+      50% { transform: translateY(-6px); }
+    }
 
-      # Runs a single command using the runners shell
-      - name: Run a one-line script
-        run: echo Hello, world!
+    h1 {
+      font-size: 24px;
+      font-weight: 500;
+      margin-bottom: 12px;
+    }
 
-      # Runs a set of commands using the runners shell
-      - name: Run a multi-line script
-        run: |
-          echo Add other actions to build,
-          echo test, and deploy your project.
+    .car {
+      margin: 22px auto 26px;
+      width: 100%;
+      max-width: 360px;
+    }
+
+    .plate {
+      margin-top: 6px;
+      display: inline-block;
+      font-size: 11px;
+      letter-spacing: 2px;
+      padding: 5px 12px;
+      border-radius: 6px;
+      border: 1px solid rgba(143, 188, 212, 0.6);
+      color: #8fbcd4;
+    }
+
+    p {
+      font-size: 15px;
+      font-weight: 300;
+      line-height: 1.8;
+      margin-bottom: 34px;
+      opacity: 0.95;
+    }
+
+    .buttons {
+      display: flex;
+      justify-content: center;
+      gap: 16px;
+      position: relative;
+    }
+
+    button {
+      padding: 12px 28px;
+      border-radius: 999px;
+      font-size: 14px;
+      font-weight: 500;
+      cursor: pointer;
+      transition: all 0.25s ease;
+    }
+
+    #yesBtn {
+      background: linear-gradient(135deg, #6b8cff, #4fa3c7);
+      color: #ffffff;
+      border: none;
+    }
+
+    #yesBtn:hover {
+      transform: scale(1.06);
+      box-shadow: 0 12px 28px rgba(107, 140, 255, 0.45);
+    }
+
+    #noBtn {
+      background: transparent;
+      color: #cfe9ff;
+      border: 1px solid rgba(207, 233, 255, 0.4);
+      position: relative;
+    }
+
+    footer {
+      margin-top: 26px;
+      font-size: 11px;
+      opacity: 0.6;
+      letter-spacing: 0.4px;
+    }
+  </style>
+</head>
+<body>
+
+  <div class="card" id="card">
+    <h1>Mabheshingo</h1>
+
+    <!-- GUSHESHE SILHOUETTE -->
+    <div class="car">
+      <svg viewBox="0 0 420 120" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <path d="M30 75 L70 55 H250 L310 65 L360 75"
+              stroke="#8fbcd4" stroke-width="3"
+              stroke-linecap="round" stroke-linejoin="round"/>
+        <circle cx="110" cy="75" r="14" stroke="#8fbcd4" stroke-width="3"/>
+        <circle cx="290" cy="75" r="14" stroke="#8fbcd4" stroke-width="3"/>
+        <line x1="40" y1="75" x2="380" y2="75"
+              stroke="#8fbcd4" stroke-width="2"/>
+      </svg>
+      <div class="plate">BROK&nbsp;3</div>
+    </div>
+
+    <p>
+      You bring calm into my world  
+      the way a well-built machine does —  
+      intentional, steady, timeless.<br><br>
+
+      Loving you feels like good design.<br><br>
+
+      Will you be my Valentine?
+    </p>
+
+    <div class="buttons">
+      <button id="yesBtn">Yes 💙</button>
+      <button id="noBtn">No</button>
+    </div>
+
+    <footer>
+      Designed with love by Azemahle
+    </footer>
+  </div>
+
+  <script>
+    const noBtn = document.getElementById("noBtn");
+    const yesBtn = document.getElementById("yesBtn");
+
+    noBtn.addEventListener("mouseover", () => {
+      const x = Math.random() * 160 - 80;
+      const y = Math.random() * 160 - 80;
+      noBtn.style.transform = `translate(${x}px, ${y}px)`;
+    });
+
+    yesBtn.addEventListener("click", () => {
+      window.location.href =
+        "https://wa.me/27630676135?text=Hey%20my%20love%20💙%20I%E2%80%99m%20your%20Valentine.";
+    });
+  </script>
+
+</body>
+</html>
