@@ -51,6 +51,7 @@
       margin-bottom: 12px;
     }
 
+    /* GUSHESHE SVG */
     .car {
       margin: 22px auto 26px;
       width: 100%;
@@ -123,17 +124,28 @@
   <div class="card" id="card">
     <h1>Mabheshingo</h1>
 
-    <!-- GUSHESHE SILHOUETTE -->
+    <!-- GUSHESHE / E30 SILHOUETTE -->
     <div class="car">
       <svg viewBox="0 0 420 120" fill="none" xmlns="http://www.w3.org/2000/svg">
-        <path d="M30 75 L70 55 H250 L310 65 L360 75"
-              stroke="#8fbcd4" stroke-width="3"
-              stroke-linecap="round" stroke-linejoin="round"/>
-        <circle cx="110" cy="75" r="14" stroke="#8fbcd4" stroke-width="3"/>
-        <circle cx="290" cy="75" r="14" stroke="#8fbcd4" stroke-width="3"/>
-        <line x1="40" y1="75" x2="380" y2="75"
-              stroke="#8fbcd4" stroke-width="2"/>
+        <!-- roof + body -->
+        <path
+          d="M30 75
+             L70 55
+             H250
+             L310 65
+             L360 75"
+          stroke="#8fbcd4"
+          stroke-width="3"
+          stroke-linecap="round"
+          stroke-linejoin="round"
+        />
+        <!-- wheels -->
+        <circle cx="110" cy="75" r="14" stroke="#8fbcd4" stroke-width="3" />
+        <circle cx="290" cy="75" r="14" stroke="#8fbcd4" stroke-width="3" />
+        <!-- bumper line -->
+        <line x1="40" y1="75" x2="380" y2="75" stroke="#8fbcd4" stroke-width="2" />
       </svg>
+
       <div class="plate">BROK&nbsp;3</div>
     </div>
 
@@ -160,6 +172,7 @@
   <script>
     const noBtn = document.getElementById("noBtn");
     const yesBtn = document.getElementById("yesBtn");
+    const card = document.getElementById("card");
 
     noBtn.addEventListener("mouseover", () => {
       const x = Math.random() * 160 - 80;
@@ -168,8 +181,16 @@
     });
 
     yesBtn.addEventListener("click", () => {
-      window.location.href =
-        "https://wa.me/27630676135?text=Hey%20my%20love%20💙%20I%E2%80%99m%20your%20Valentine.";
+      card.innerHTML = `
+        <h1>Perfect choice 💙</h1>
+        <p>
+          Mabheshingo,<br><br>
+          From the gusheshe rides  
+          to the quiet moments —  
+          I can’t wait to celebrate love with you.<br><br>
+          Happy Valentine’s Day 🤍
+        </p>
+      `;
     });
   </script>
 
